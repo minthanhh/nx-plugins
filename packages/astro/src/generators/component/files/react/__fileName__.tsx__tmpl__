@@ -1,0 +1,13 @@
+/** @jsxImportSource react */
+
+import styles from './${<%= fileName %>}.module.${style}';
+
+type  <%= className %>Props = {};
+
+function <%= className %> (props: <%= className %>Props) {
+  return <div><%= className %></div>
+};
+
+export default <%= className %>;
+
+

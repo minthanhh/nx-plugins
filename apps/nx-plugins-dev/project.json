@@ -1,0 +1,11 @@
+{
+  "name": "nx-plugins-dev",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nx-plugins-dev",
+  "projectType": "application",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

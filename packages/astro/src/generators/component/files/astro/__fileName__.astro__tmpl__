@@ -1,0 +1,9 @@
+---
+interface Props {}
+
+const {} = Astro.props;
+---
+
+<div>
+  <h1>Welcome to <%= className %>!</h1>
+</div>

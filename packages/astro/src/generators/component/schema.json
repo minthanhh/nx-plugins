@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "NxAstroApp",
+  "title": "Generate component integrations for NxAstro",
+  "description": "Create a Astro Application for Nx.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the component.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the component?",
+      "x-priority": "important"
+    },
+    "style": {
+      "description": "The file extension to be used for style files.",
+      "type": "string",
+      "alias": "s",
+      "default": "css",
+      "x-prompt": {
+        "message": "Which stylesheet format would you like to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "css",
+            "label": "CSS"
+          },
+          {
+            "value": "scss",
+            "label": "SASS(.scss)       [ https://sass-lang.com          ]"
+          },
+          {
+            "value": "less",
+            "label": "LESS              [ https://lesscss.org            ]"
+          },
+          {
+            "value": "styled-components",
+            "label": "styled-components [ https://styled-components.com ]"
+          },
+          {
+            "value": "@emotion/styled",
+            "label": "emotion           [ https://emotion.sh            ]"
+          },
+          {
+            "value": "styled-jsx",
+            "label": "styled-jsx        [ https://www.npmjs.com/package/styled-jsx ]"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ]
+      }
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "alias": "p",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-deprecated": "Provide the `directory` option instead and use the `as-provided` format. The project will be determined from the directory provided. It will be removed in Nx v19."
+    },
+    "nameAndDirectoryFormat": {
+      "description": "Whether to generate the component in the directory as provided, relative to the current working directory and ignoring the project (`as-provided`) or generate it using the project and directory relative to the workspace root (`derived`).",
+      "type": "string",
+      "enum": ["as-provided", "derived"]
+    },
+    "js": {
+      "type": "boolean",
+      "description": "Generate JavaScript files rather than TypeScript files.",
+      "default": false
+    },
+    "skipTests": {
+      "type": "boolean",
+      "description": "When true, does not create `spec.ts` test files for the new component.",
+      "default": false,
+      "x-priority": "internal"
+    },
+    "directory": {
+      "type": "string",
+      "description": "The directory at which to create the component file. When `--nameAndDirectoryFormat=as-provided`, it will be relative to the current working directory. Otherwise, it will be relative to the workspace root.",
+      "alias": "dir",
+      "x-priority": "important"
+    },
+    "integrations": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array"
+        }
+      ],
+      "description": "Whether to generate the project name and root directory as provided (`as-provided`) or generate them composing their values and taking the configured layout into account (`derived`).",
+      "enum": ["react", "astro", "solid-js", "vue", "svelte", "preact"],
+      "alias": "ig",
+      "x-prompt": {
+        "message": "Would you like to use react component in Astro application?",
+        "type": "list",
+        "items": [
+          {
+            "value": "react",
+            "label": "React"
+          },
+          {
+            "value": "astro",
+            "label": "Astro"
+          },
+          {
+            "value": "solid-js",
+            "label": "Solid"
+          },
+          {
+            "value": "vue",
+            "label": "Vue"
+          },
+          {
+            "value": "preact",
+            "label": "Preact"
+          },
+          {
+            "value": "svelte",
+            "label": "Svelte"
+          }
+        ]
+      }
+    },
+    "export": {
+      "type": "boolean",
+      "description": "When true, the component is exported from the project `index.ts` (if it exists).",
+      "alias": "e",
+      "default": false,
+      "x-prompt": "Should this component be exported in the project?"
+    },
+    "fileName": {
+      "type": "string",
+      "description": "Create a component with this file name."
+    },
+    "skipFormat": {
+      "description": "Skip formatting files.",
+      "type": "boolean",
+      "default": false,
+      "x-priority": "internal"
+    },
+    "globalCss": {
+      "type": "boolean",
+      "description": "Default is `false`. When `true`, the component is generated with `*.css`/`*.scss` instead of `*.module.css`/`*.module.scss`.",
+      "default": false
+    }
+  },
+  "required": [],
+  "examplesFile": "../../../docs/application-examples.md"
+}

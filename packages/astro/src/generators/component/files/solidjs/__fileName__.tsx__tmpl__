@@ -1,0 +1,8 @@
+/** @jsxImportSource solid-js */
+import { createSignal, type JSX } from 'solid-js';
+
+type <%= className %>Props = {}
+
+export default function <%= className %>(props: <%= className %>Props) {
+	return <p>Welcome to <%= className %>!</p>
+}

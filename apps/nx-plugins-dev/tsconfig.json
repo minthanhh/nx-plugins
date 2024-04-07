@@ -1,0 +1,15 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@constants/*": ["src/constants/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "src/**/*.astro", "env.d.ts"],
+  "exclude": ["node_modules", "jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

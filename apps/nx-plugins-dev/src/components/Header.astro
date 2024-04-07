@@ -1,0 +1,58 @@
+---
+import { Constants } from '@constants/constants'
+
+interface Props {
+	title: string;
+}
+---
+
+<div class="relative flex print:hidden">
+  <div class="mx-auto hidden w-full max-w-7xl items-center justify-between space-x-10 p-4 px-8 lg:flex">
+    <div class="flex items-center">
+      <a href="/" class="flex items-center text-[#18122B] font-sans font-black">
+        NxPlugins
+      </a>
+    </div>
+    <div class="flex-shrink-0 text-sm">
+      <nav role="menu" class="items-justified flex justify-center space-x-2 py-0.5">
+        <a title="Documentation" class="hidden px-3 py-2 font-medium leading-tight text-[#18122B] md:inline-flex" href="/docs">Documentation<a>
+      </nav>
+    </div>
+    <div class="flex-shrink-0 text-sm">
+      <nav class="items-justified flex justify-center space-x-1">
+        <button id="button-ctrl" type="button" class="inline-flex items-center">
+          <span class="ml-auto block flex-none rounded-md border border-slate-200 bg-slate-50/60 px-1 py-0.5 text-xs font-semibold text-slate-400 transition hover:text-slate-500 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-500 dark:hover:text-slate-400" style="opacity: 1;">
+            <span class="sr-only">Press </span>
+            <kbd class="font-sans"><abbr title="Control" class="no-underline">Ctrl </abbr></kbd>
+            <span class="sr-only"> and </span>
+            <kbd class="font-sans">K</kbd>
+            <span class="sr-only"> to search</span>
+          </span>
+        </button>
+        <div class="inline-block">
+          <div class="group relative flex h-full w-full items-center px-1">
+            <label class="sr-only" id="headlessui-listbox-label-:r3:" data-headlessui-state="">Theme</label>
+            <button type="button" class="inline-flex p-2 text-sm font-medium opacity-60 transition-opacity group-hover:opacity-100 group-hover:text-blue-500" id="headlessui-listbox-button-:r4:" aria-haspopup="true" aria-expanded="false" data-headlessui-state="" aria-labelledby="headlessui-listbox-label-:r3: headlessui-listbox-button-:r4:">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <a title="Nx is open source, check the code on GitHub" href="https://github.com/nrwl/nx" target="_blank" rel="noreferrer" class="px-3 py-2 opacity-60 hover:opacity-90">
+          <span class="sr-only">Nx on GitHub</span>
+          <div class="item-center flex">
+            <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8a8 8 0 0 0-8-8z"></path>
+            </svg>
+          </div>
+        </a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script is:inline type="module">
+  $("button").on("click", () => {console.log("Button clicked!")});
+</script>

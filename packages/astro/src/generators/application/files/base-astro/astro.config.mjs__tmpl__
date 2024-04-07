@@ -1,0 +1,8 @@
+import { defineConfig } from 'astro/config';
+
+// https://astro.build/config
+export default defineConfig({
+  cacheDir: '${offsetFromRoot}node_modules/.astro',`
+  outDir: <%= projectName === "." ? `./dist/${projectName}` : `${offsetFromRoot}dist/${projectName}` %>
+  build: {}
+});

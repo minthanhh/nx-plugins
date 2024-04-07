@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Integration",
+  "title": "Integration",
+  "type": "object",
+  "properties": {
+    "integrations": {
+      "type": "array",
+      "description": "Provide the library type",
+      "enum": ["react", "astro", "solid-js", "vue", "svelte", "preact"],
+      "x-priority": "internal",
+      "x-prompt": {
+        "message": "Which type of library would you like to generate?",
+        "type": "list",
+        "multiselect": true,
+        "items": [
+          {
+            "value": "react",
+            "label": "ReactJS"
+          },
+          {
+            "value": "astro",
+            "label": "Astro"
+          },
+          {
+            "value": "solid-js",
+            "label": "SolidJS"
+          },
+          {
+            "value": "vue",
+            "label": "VueJS"
+          },
+          {
+            "value": "svelte",
+            "label": "Svelte"
+          },
+          {
+            "value": "tailwind",
+            "label": "TailwindCSS"
+          },
+          {
+            "value": "starlight",
+            "label": "Starlight"
+          }
+        ]
+      }
+    }
+  },
+  "required": ["integrations"]
+}

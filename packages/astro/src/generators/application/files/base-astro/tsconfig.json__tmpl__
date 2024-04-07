@@ -1,0 +1,22 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    <% if (integrations.length) { %>
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+    },
+    <% } %>
+  },
+  "include": [
+    "<%= rootPath %>**/*.ts",
+    "<%= rootPath %>**/*.tsx",
+    "<%= rootPath %>**/*.js",
+    "<%= rootPath %>**/*.jsx",
+    "<%= rootPath %>**/*.astro",
+    "env.d.ts"
+  ],
+  "exclude": ["node_modules", "jest.config.ts", "<%= rootPath %>**/*.spec.ts", "<%= rootPath %>**/*.test.ts"]
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "Configurations",
+  "title": "Generate component integrations for NxAstro",
+  "description": "Create a Astro Application for Nx.",
+  "type": "object",
+  "properties": {
+    "integrations": {
+      "type": "array",
+      "description": "Provide the library type",
+      "enum": ["react", "astro", "solid-js", "vue", "svelte", "preact", "none"],
+      "x-priority": "internal",
+      "x-prompt": {
+        "message": "Which type of library would you like to generate?",
+        "type": "list",
+        "multiselect": true,
+        "items": [
+          {
+            "value": "react",
+            "label": "ReactJS"
+          },
+          {
+            "value": "astro",
+            "label": "Astro"
+          },
+          {
+            "value": "solid-js",
+            "label": "SolidJS"
+          }
+        ]
+      }
+    },
+    "projectName": {
+      "type": "string",
+      "description": "The name of the project.",
+      "alias": "p",
+      "x-deprecated": "Provide the `directory` option instead and use the `as-provided` format. The project will be determined from the directory provided. It will be removed in Nx v19."
+    },
+    "skipFormat": {
+      "description": "Skip formatting files.",
+      "type": "boolean",
+      "default": false,
+      "x-priority": "internal"
+    }
+  }
+}
