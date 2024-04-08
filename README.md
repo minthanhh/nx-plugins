@@ -16,16 +16,13 @@ Add Nx plugins to leverage their code generators and automated, inferred tasks.
 
 ```
 # Add plugin
-npx nx add @nx/react
+npx nx add @mithho/astro
 
 # Use code generator
-npx nx generate @nx/react:app demo
+npx nx generate @mithho/astro:application demo
 
 # Run development server
 npx nx serve demo
-
-# View project details
-npx nx show project demo --web
 ```
 
 Run `npx nx list` to get a list of available plugins and whether they have generators. Then run `npx nx list <plugin-name>` to see what generators are available.
